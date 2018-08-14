@@ -30,4 +30,3 @@ dependencies {
 	compile group: 'com.palominolabs.jersey', name: 'jersey-cors-filter', version: '1.0.1'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
-
