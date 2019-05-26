@@ -25,6 +25,9 @@ repositories {
 task wrapper(type: Wrapper) {
 	gradleVersion = '5.4'
 }
+plugins {
+	id "com.heroku.sdk.heroku-gradle" version "1.0.4"
+}
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
 	compile('org.springframework.boot:spring-boot-starter-web')
