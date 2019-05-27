@@ -32,15 +32,15 @@ dependencies {
 	compile group: 'com.palominolabs.jersey', name: 'jersey-cors-filter', version: '1.0.1'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
-task stage(type: Copy, dependsOn: [clean, build]) {
-	from jar.archivePath
-	into project.rootDir
-	rename {
-		'app.jar'
-	}
-}
-stage.mustRunAfter(clean)
-
-clean << {
-	project.file('app.jar').delete()
-}
+//task stage(type: Copy, dependsOn: [clean, build]) {
+//	from jar.archivePath
+//	into project.rootDir
+//	rename {
+//		'app.jar'
+//	}
+//}
+//stage.mustRunAfter(clean)
+//
+//clean << {
+//	project.file('app.jar').delete()
+//}
