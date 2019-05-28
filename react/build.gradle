@@ -1,16 +1,3 @@
-buildscript {
-	ext {
-		springBootVersion = '2.0.3.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-		maven { url 'https://repo.spring.io/libs-snapshot' }
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
-}
-
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
@@ -23,21 +10,21 @@ sourceCompatibility = 1.8
 repositories {
 	mavenCentral()
 }
+buildscript {
+	ext {
+		springBootVersion = '2.0.3.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+		maven { url 'https://repo.spring.io/libs-snapshot' }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile group: 'com.palominolabs.jersey', name: 'jersey-cors-filter', version: '1.0.1'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
-//task stage(type: Copy, dependsOn: [clean, build]) {
-//	from jar.archivePath
-//	into project.rootDir
-//	rename {
-//		'app.jar'
-//	}
-//}
-//stage.mustRunAfter(clean)
-//
-//clean << {
-//	project.file('app.jar').delete()
-//}
